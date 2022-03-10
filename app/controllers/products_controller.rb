@@ -6,4 +6,9 @@ class ProductsController < ApplicationController
   def one_product
     render json: Product.first.as_json
   end
+
+  def product_lookup
+    id = params[:id]
+    render json: Product.find_by(id: id)
+  end
 end
