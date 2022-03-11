@@ -1,0 +1,24 @@
+POST http://localhost:3000/products/create
+Content-Type: application/json
+
+{
+  "name": "Shoe",
+  "price": 50,
+  "image_url": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/d5f168f9-f953-4419-ac7a-f0def128176e/renew-run-2-mens-road-running-shoe-8WSLZf.png",
+  "description": "Nike Renew Run 2 Black Men's Running Shoes"
+}
+###
+GET http://localhost:3000/products
+
+###
+GET http://localhost:3000/products/4
+
+###
+PATCH http://localhost:3000/products/4
+Content-Type: application/json
+
+{
+  "name": "Shoes",
+  "price": 70,
+  "description": "Nike Renew Run 3 Black Men's Running Shoes"
+ }
