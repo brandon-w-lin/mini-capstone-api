@@ -14,13 +14,13 @@ GET http://localhost:3000/products
 GET http://localhost:3000/products/3
 
 ###
-PATCH http://localhost:3000/products/4
+PATCH http://localhost:3000/products/5
 Content-Type: application/json
 
 {
-  "name": "Shoes",
-  "price": 70,
-  "description": "Nike Renew Run 3 Black Men's Running Shoes"
+  # "name": "Shoes",
+  "price": 9
+  # "description": "Nike Renew Run 3 Black Men's Running Shoes"
  }
 
 ###
