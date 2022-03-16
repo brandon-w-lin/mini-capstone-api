@@ -1,11 +1,11 @@
-POST http://localhost:3000/products/create
+POST http://localhost:3000/products
 Content-Type: application/json
 
 {
-  "name": "Shoe",
-  "price": 50,
-  "image_url": "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/d5f168f9-f953-4419-ac7a-f0def128176e/renew-run-2-mens-road-running-shoe-8WSLZf.png",
-  "description": "Nike Renew Run 2 Black Men's Running Shoes"
+  "name": "Cups",
+  "price": "20",
+  "image_url": "https://de2wfhoo6xqi5.cloudfront.net/size/600/a35/380/2773a9aa81f99102210657d5a347902c4a.jpg",
+  "description": "Solo 16 oz Plastic Party Cups, Red, 1,000 Cups/Carton - These Plastic Party Cups are ideal for any occasion. They deliver superior value and suitable for any cold application. Cups are made of sturdy, rigid polystyrene."
 }
 ###
 GET http://localhost:3000/products
@@ -14,13 +14,11 @@ GET http://localhost:3000/products
 GET http://localhost:3000/products/3
 
 ###
-PATCH http://localhost:3000/products/5
+PATCH http://localhost:3000/products/10
 Content-Type: application/json
 
 {
-  # "name": "Shoes",
-  "price": 9
-  # "description": "Nike Renew Run 3 Black Men's Running Shoes"
+  "price": 30.01
  }
 
 ###
