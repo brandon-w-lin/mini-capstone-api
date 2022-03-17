@@ -8,17 +8,17 @@ Content-Type: application/json
   "description": "Solo 16 oz Plastic Party Cups, Red, 1,000 Cups/Carton - These Plastic Party Cups are ideal for any occasion. They deliver superior value and suitable for any cold application. Cups are made of sturdy, rigid polystyrene."
 }
 ###
-GET http://localhost:3000/products
+GET http://localhost:3000/products.json
 
 ###
-GET http://localhost:3000/products/3
+GET http://localhost:3000/products/2.json
 
 ###
 PATCH http://localhost:3000/products/10
 Content-Type: application/json
 
 {
-  "price": 30.01
+  "supplier_id": 1
  }
 
 ###

@@ -1,5 +1,6 @@
 {
   id: @product.id,
+  supplier_id: @product.supplier_id,
   created_at: @product.created_at,
   updated_at: @product.updated_at,
   name: @product.name,
