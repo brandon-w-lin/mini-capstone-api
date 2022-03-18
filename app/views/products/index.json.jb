@@ -3,7 +3,7 @@
     id: product.id,
     name: product.name,
     price: product.price,
-    image_url: product.image_url,
+    product_images: product.product_images,
     description: product.description,
     supplier: product.supplier,
   # url: product_url(product, format: :json)

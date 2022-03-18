@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
     product = Product.new(
       name: params[:name],
       price: params[:price],
-      image_url: params[:image_url],
+      product_images: params[:product_images],
       description: params[:description],
       supplier_id: params[:supplier_id]
     )
@@ -31,7 +31,7 @@ class ProductsController < ApplicationController
 
     product.name = params[:name] || product.name
     product.price = params[:price] || product.price
-    product.image_url = params[:image_url] || product.image_url
+    product.product_images = params[:product_images] || product.product_images
     product.description = params[:description] || product.description
 
     if product.save
