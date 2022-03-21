@@ -1,0 +1,12 @@
+Exercise: Decomposition
+Write out all the steps necessary for your mini-capstone backend to allow users to purchase products. (aim for roughly 5 to 10 steps)
+For now, a user can submit an order for any quantity of a single product (we are not implementing a “shopping cart” where an order contains multiple products).
+Do not write any code for this exercise; just focus on decomposing the different steps necessary to complete the feature.
+
+1. User sends post request for their purchase, including parameters for quantity. Product_ID is implicitly included within the purchase based on which purchase button the user presses
+2. Verify user has active session. If not, send to login page
+3. Retrieve information from the product by product_id (price)
+4. Multiply the price * quantity => subtotal
+5. Calculate tax
+6. Calculate total
+7. Send request to purchase handler to take payment info / shipping info

@@ -6,6 +6,7 @@ class Product < ApplicationRecord
 
   belongs_to :supplier
   has_many :product_images
+  has_many :orders
 
   def is_discounted?
     return price < 10
