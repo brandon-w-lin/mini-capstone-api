@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   def index
+    # authenticate_user()
     @products = Product.all
     render :index
   end
@@ -16,7 +17,7 @@ class ProductsController < ApplicationController
       price: params[:price],
       product_images: params[:product_images],
       description: params[:description],
-      supplier_id: params[:supplier_id]
+      supplier_id: params[:supplier_id],
     )
     if product.save
       render json: product.as_json

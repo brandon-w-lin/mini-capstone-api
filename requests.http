@@ -9,6 +9,7 @@ Content-Type: application/json
 }
 ###
 GET http://localhost:3000/products.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDc5NzE4OTN9.x8nATIWadCtip115sIFvaG1MO936_25gL6eYEQfoBQ8
 
 ###
 GET http://localhost:3000/products/2.json
@@ -24,8 +25,7 @@ Content-Type: application/json
 ###
 DELETE http://localhost:3000/products/3
 
-###
-# Users create (signup)
+### Users create (signup)
 
 POST http://localhost:3000/users
 Content-Type: application/json
@@ -35,4 +35,12 @@ Content-Type: application/json
   "email": "AL@example.com",
   "password": "testing",
   "password_confirmation": "testing"
+}
+### Sessions create (login)
+POST http://localhost:3000/sessions.json
+Content-Type: application/json
+
+{
+  "email": "BL@example.com",
+  "password": "testing"
 }
