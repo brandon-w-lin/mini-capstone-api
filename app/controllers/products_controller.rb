@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_admin
+
   def index
-    # authenticate_user()
     @products = Product.all
     render :index
   end
@@ -12,17 +13,18 @@ class ProductsController < ApplicationController
   end
 
   def create
-    product = Product.new(
+    @product = Product.new(
       name: params[:name],
       price: params[:price],
       product_images: params[:product_images],
       description: params[:description],
       supplier_id: params[:supplier_id],
     )
-    if product.save
-      render json: product.as_json
+
+    if @product.save
+      render :show
     else
-      render json: { errors: product.errors.full_messages }, status: 422
+      render json: { errors: @product.errors.full_messages }, status: 422
     end
   end
 

@@ -1,20 +1,22 @@
-POST http://localhost:3000/products
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDgwNTkwMTl9.5adbcjq9og1tenn8L1I6vqC2ZmRYeirUsC7Vk_AdFls
+
+### Create Product
+POST http://localhost:3000/products.json
 Content-Type: application/json
+Authorization: Bearer {{jwt}}
 
 {
   "name": "Cups",
   "price": "20",
-  "image_url": "https://de2wfhoo6xqi5.cloudfront.net/size/600/a35/380/2773a9aa81f99102210657d5a347902c4a.jpg",
   "description": "Solo 16 oz Plastic Party Cups, Red, 1,000 Cups/Carton - These Plastic Party Cups are ideal for any occasion. They deliver superior value and suitable for any cold application. Cups are made of sturdy, rigid polystyrene."
 }
-###
+### Index
 GET http://localhost:3000/products.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDc5NzE4OTN9.x8nATIWadCtip115sIFvaG1MO936_25gL6eYEQfoBQ8
-
-###
+Authorization: Bearer {{jwt}}
+### Show Product
 GET http://localhost:3000/products/2.json
 
-###
+### Update Product
 PATCH http://localhost:3000/products/10
 Content-Type: application/json
 
@@ -22,7 +24,7 @@ Content-Type: application/json
   "supplier_id": 1
  }
 
-###
+### Delete Products
 DELETE http://localhost:3000/products/3
 
 ### Users create (signup)
@@ -31,8 +33,8 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "name": "Anna Lin",
-  "email": "AL@example.com",
+  "name": "David Lin",
+  "email": "DL@example.com",
   "password": "testing",
   "password_confirmation": "testing"
 }
@@ -43,4 +45,25 @@ Content-Type: application/json
 {
   "email": "BL@example.com",
   "password": "testing"
+}
+
+### Order create
+
+POST http://localhost:3000/orders.json
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
+{
+  "product_id": 1,
+  "quantity": 1
+}
+
+### Users update
+
+PATCH http://localhost:3000/users/1.json
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
+{
+  "admin": true
 }
