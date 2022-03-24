@@ -1,4 +1,14 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDgwNTkwMTl9.5adbcjq9og1tenn8L1I6vqC2ZmRYeirUsC7Vk_AdFls
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NDgyMjkwNzV9.WC8BcZgOMuLIItAANCmZCZsRHaGEbxAoUvwU3Gx6ihI
+################
+### PRODUCTS ###
+################
+
+### Index
+GET http://localhost:3000/products.json
+Authorization: Bearer {{jwt}}
+
+### Show Product
+GET http://localhost:3000/products/2.json
 
 ### Create Product
 POST http://localhost:3000/products.json
@@ -10,11 +20,7 @@ Authorization: Bearer {{jwt}}
   "price": "20",
   "description": "Solo 16 oz Plastic Party Cups, Red, 1,000 Cups/Carton - These Plastic Party Cups are ideal for any occasion. They deliver superior value and suitable for any cold application. Cups are made of sturdy, rigid polystyrene."
 }
-### Index
-GET http://localhost:3000/products.json
-Authorization: Bearer {{jwt}}
-### Show Product
-GET http://localhost:3000/products/2.json
+
 
 ### Update Product
 PATCH http://localhost:3000/products/10
@@ -43,7 +49,7 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "BL@example.com",
+  "email": "AL@example.com",
   "password": "testing"
 }
 
@@ -54,8 +60,8 @@ Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
 {
-  "product_id": 1,
-  "quantity": 1
+  "product_id": 2,
+  "quantity": 3
 }
 
 ### Users update
@@ -66,4 +72,31 @@ Authorization: Bearer {{jwt}}
 
 {
   "admin": true
+}
+
+### Product_image create
+### For some reason this does not work. Investigate
+### Error: uninitialized constant ProductImagesController::Product_image
+
+POST http://localhost:3000/product_images.json
+Content-Type: application/json
+# Authorization: Bearer {{jwt}}
+
+{
+  "product_id": 1,
+  "rank": 1,
+  "url": "https://www.irishtimes.com/polopoly_fs/1.4473007.1612185073!/image/image.jpg"
+}
+
+
+### Category create
+### For some reason this does not work. Investigate
+### Error: uninitialized constant ProductImagesController::Product_image
+
+POST http://localhost:3000/categories
+Content-Type: application/json
+# Authorization: Bearer {{jwt}}
+
+{
+  "name": "Accessories"
 }

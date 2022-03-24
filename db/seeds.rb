@@ -12,6 +12,13 @@
 
 # Product.create(name: "Water bottle", price: 10, image_url: "https://www.hydroflask.com/media/catalog/product/cache/9177cfe059281270017bc29637323e6d/w/3/w32bsw-rain.jpg", description: "Big enough for all-day hydration and easy sipping, our 32 oz Wide Mouth Bottle with Straw Lid is made with professional-grade stainless steel and a wider opening for faster fill. And our Color Last™ powder coat is dishwasher safe for even more convenience. Cold stays ice cold for 24 hours, and hot stays wickedly hot for 12 — just like always.")
 
-Supplier.create(name: "Big Dawgs", email: "bd@example.com", phone_number: "1111111111")
-Supplier.create(name: "Lil Cats", email: "lc@example.com", phone_number: "2222222222")
-Supplier.create(name: "Medium Bears", email: "mb@example.com", phone_number: "3333333333")
+# Supplier.create(name: "Big Dawgs", email: "bd@example.com", phone_number: "1111111111")
+# Supplier.create(name: "Lil Cats", email: "lc@example.com", phone_number: "2222222222")
+# Supplier.create(name: "Medium Bears", email: "mb@example.com", phone_number: "3333333333")
+
+# CategoryProduct.create(category_id: 1, product_id: 1)
+# CategoryProduct.create(category_id: 1, product_id: 2)
+# CategoryProduct.create(category_id: 1, product_id: 4)
+# CategoryProduct.create(category_id: 2, product_id: 5)
+# CategoryProduct.create(category_id: 2, product_id: 6)
+# CategoryProduct.create(category_id: 2, product_id: 10)
