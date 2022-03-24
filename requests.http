@@ -4,8 +4,7 @@
 ################
 
 ### Index
-GET http://localhost:3000/products.json
-Authorization: Bearer {{jwt}}
+GET http://localhost:3000/products.json?category=Clothing
 
 ### Show Product
 GET http://localhost:3000/products/2.json
