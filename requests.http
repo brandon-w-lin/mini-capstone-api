@@ -1,4 +1,5 @@
 @jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NDgyMjkwNzV9.WC8BcZgOMuLIItAANCmZCZsRHaGEbxAoUvwU3Gx6ihI
+
 ################
 ### PRODUCTS ###
 ################
@@ -20,7 +21,6 @@ Authorization: Bearer {{jwt}}
   "description": "Solo 16 oz Plastic Party Cups, Red, 1,000 Cups/Carton - These Plastic Party Cups are ideal for any occasion. They deliver superior value and suitable for any cold application. Cups are made of sturdy, rigid polystyrene."
 }
 
-
 ### Update Product
 PATCH http://localhost:3000/products/10
 Content-Type: application/json
@@ -31,6 +31,24 @@ Content-Type: application/json
 
 ### Delete Products
 DELETE http://localhost:3000/products/3
+
+###########################
+##### CARTED PRODUCTS #####
+###########################
+
+POST http://localhost:3000/cart
+Content-Type: application/json
+
+{
+  "name": "David Lin",
+  "email": "DL@example.com",
+  "password": "testing",
+  "password_confirmation": "testing"
+}
+
+#################
+##### USERS #####
+#################
 
 ### Users create (signup)
 
@@ -43,6 +61,20 @@ Content-Type: application/json
   "password": "testing",
   "password_confirmation": "testing"
 }
+
+### Users update
+PATCH http://localhost:3000/users/1.json
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
+{
+  "admin": true
+}
+
+####################
+##### SESSIONS #####
+####################
+
 ### Sessions create (login)
 POST http://localhost:3000/sessions.json
 Content-Type: application/json
@@ -52,8 +84,11 @@ Content-Type: application/json
   "password": "testing"
 }
 
-### Order create
+##################
+##### ORDERS #####
+##################
 
+### Order create
 POST http://localhost:3000/orders.json
 Content-Type: application/json
 Authorization: Bearer {{jwt}}
@@ -63,15 +98,9 @@ Authorization: Bearer {{jwt}}
   "quantity": 3
 }
 
-### Users update
-
-PATCH http://localhost:3000/users/1.json
-Content-Type: application/json
-Authorization: Bearer {{jwt}}
-
-{
-  "admin": true
-}
+##################
+##### IMAGES #####
+##################
 
 ### Product_image create
 ### For some reason this does not work. Investigate
@@ -87,10 +116,11 @@ Content-Type: application/json
   "url": "https://www.irishtimes.com/polopoly_fs/1.4473007.1612185073!/image/image.jpg"
 }
 
+######################
+##### CATEGORIES #####
+######################
 
 ### Category create
-### For some reason this does not work. Investigate
-### Error: uninitialized constant ProductImagesController::Product_image
 
 POST http://localhost:3000/categories
 Content-Type: application/json
