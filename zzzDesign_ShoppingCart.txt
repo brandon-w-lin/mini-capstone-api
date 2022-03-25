@@ -1,0 +1,23 @@
+User Story
+- User adds one or multiple products to Cart => user has multiple cart items
+- User can review the cart 
+- User can select purchase and pay for all items in the cart => order has many cart items
+- An order is created when a user purchases
+
+Developer instructions
+1. Create a model called Cart
+2. Create methods to show cart for current user
+3. Create routes to show cart for current user
+4. Create views to show cart for current user
+5. Allow http requests to post to the cart
+6. Allow users to check out the cart
+7. Connect the cart and the orders (cart items belong to a single order)
+8. Create method to check out
+9. Create method to remove from cart
+
+
+Relationships
+Order has many cart items
+Order belongs to a user through cart items
+User has many cart items
+User has many orders
